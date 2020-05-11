@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title %></title>
+    <%- include ('partials/head.html')%>
+</head>
+<body>
+    <div class="fondo_fixed">
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title mt-2">Nós vemos pronto</h5>
+              <img src="/img/logo_nuevo.png" class="mb-2 mt-2" alt="">
+                <div id="fecha" class="mb-3 mt-3">
+                    <div>
+                        <span id="Dia" class="DT"></span>
+                        <span id="DiaT" class="Ds"></span>
+                    </div>
+                    <div>
+                        <span id="Hora" class="DT"></span>
+                        <span id="HoraT" class="Ds"></span>
+                    </div>
+                    <div>
+                        <span id="Minuto" class="DT"></span>
+                        <span id="MinutoT" class="Ds"></span>
+                    </div>
+                    <div>
+                        <span id="Segundo" class="DT"></span>
+                        <span id="SegundoT" class="Ds"></span>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <%- include ('partials/scripts.html')%>
+    <script type="text/javascript">        
+        function getTime() {
+            now = new Date();
+            //LA FECHA SE CONFIGURA ABAJO
+            y2k = new Date("Aug 6 2020 7:59:59"); 
+            //Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"
+            days = (y2k - now) / 1000 / 60 / 60 / 24;
+            daysRound = Math.floor(days);
+            hours = (y2k - now) / 1000 / 60 / 60 - (24 * daysRound);
+            hoursRound = Math.floor(hours);
+            minutes = (y2k - now) / 1000 /60 - (24 * 60 * daysRound) - (60 * hoursRound);
+            minutesRound = Math.floor(minutes);
+            seconds = (y2k - now) / 1000 - (24 * 60 * 60 * daysRound) - (60 * 60 * hoursRound) - (60 * minutesRound);
+            secondsRound = Math.round(seconds);
+            sec = (secondsRound == 1) ? " seg" : " seg";
+            min = (minutesRound == 1) ? " min " : " min ";
+            hr = (hoursRound == 1) ? " hora" : " horas ";
+            dy = (daysRound == 1) ? " día" : " días "
+            $('#Dia').text("  " + daysRound + " ");
+            $('#DiaT').text("  " + dy + " ");
+            $('#Hora').text("  " + hoursRound + " ");
+            $('#HoraT').text("  " + hr + " ");
+            $('#Minuto').text("  " + minutesRound + " ");
+            $('#MinutoT').text("  " + min + " ");
+            $('#Segundo').text("  " + secondsRound + " ");
+            $('#SegundoT').text("  " + sec + " ");
+            newtime = window.setTimeout("getTime();", 1000);
+        }
+        window.onload=getTime
+    </script>
+</body>
+</html>
