@@ -1,7 +1,7 @@
 const router = require('express').Router(); 
 
 router.get('/task', (req, res) => {
-    res.send('Tareas');
+    res.render('../views/task/task.html', {title: 'Tareas'});
 });
 
 module.exports = router;
