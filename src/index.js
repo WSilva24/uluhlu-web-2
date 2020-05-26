@@ -1,4 +1,5 @@
-const express = require('express'); 
+const express = require('express');
+const logger = require('morgan')
 const path = require('path');
 const methodOverride = require('method-override');
 const session = require ('express-session');
@@ -14,6 +15,7 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
 // Middlewares
+app.use(logger('dev'));
 app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 app.use(session({

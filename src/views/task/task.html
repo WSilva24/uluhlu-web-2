@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include ('../partials/head.html') %>
+</head>
+<body>
+    <!-- 
+    <h1>Ajax y Node JS</h1>
+    <button id="obtenerProductos">Obtener Productos</button>
+    <hr>
+    <form id="formularioProductos">
+        <input type="text" id="nuevoProducto">
+        <button type="submit">Crear Producto</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table> 
+    -->
+    <div class="container">
+        <form action="/add" method="POST">
+            <legend>Agregar tarea</legend>
+            <div class="form-group">
+                <input type="text" class="form-control" id="tarea" name="tarea">
+            </div>
+            <button class="btn btn-primary" type="submit">Agregar Tarea</button>
+        </form>
+        <hr>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Tarea</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (var i=0; i < tareas.length; i++) { %>
+                    <tr>
+                        <td><%= i + 1 %></td>
+                        <td><b><%= tareas[i].tarea %></b></td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+    <%- include ('../partials/scripts.html') %>
+</body>
+</html>
