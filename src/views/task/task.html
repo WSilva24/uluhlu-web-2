@@ -7,28 +7,38 @@
     <%- include ('../partials/head.html') %>
 </head>
 <body>
-    <!-- 
-    <h1>Ajax y Node JS</h1>
-    <button id="obtenerProductos">Obtener Productos</button>
-    <hr>
-    <form id="formularioProductos">
-        <input type="text" id="nuevoProducto">
-        <button type="submit">Crear Producto</button>
-    </form>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-    </table> 
-    -->
     <div class="container">
+        <br>
+        <h1>Ajax y Node JS</h1>
+        <button id="obtenerProductos">Obtener Productos</button>
+        <hr>
+        <form id="formularioProductos">
+            <input type="text" id="nuevaTarea">
+            <button type="submit">Crear Producto</button>
+        </form>
+        <br>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table> 
+    </div>
+    <!--
+    <div class="container">
+        <h1>CRUD</h1>
         <form action="/add" method="POST">
             <legend>Agregar tarea</legend>
             <div class="form-group">
@@ -42,6 +52,7 @@
                 <tr>
                     <th>#</th>
                     <th>Tarea</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -49,11 +60,16 @@
                     <tr>
                         <td><%= i + 1 %></td>
                         <td><b><%= tareas[i].tarea %></b></td>
+                        <td>
+                            <a href="/turn/<%= tareas[i]._id %>" class="<%= tareas[i].status ? 'btn btn-success' : ' btn btn-dark' %>">Check</a>
+                            <a href="" class="">Borrar</a>
+                        </td>
                     </tr>
                 <% } %>
             </tbody>
         </table>
     </div>
+    -->
     <%- include ('../partials/scripts.html') %>
 </body>
 </html>

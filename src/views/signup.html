@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%=title %> | Uluhlu</title>
-    <%- include ('../partials/head.html')%>
+    <%- include ('partials/head.html')%>
 </head>
 <body>
     <div class="fondo_relative">
@@ -22,14 +22,15 @@
                     <div class="form-group">
                         <input type="password" class="form-control" placeholder="Password" required="">
                     </div>
-                    <button class="btn btn-primary btn-block">Crear Cuenta</button>
+                    <!-- <button class="btn btn-primary btn-block">Crear Cuenta</button> -->
+                    <a href="/app" class="btn btn-primary btn-block">Crear Cuenta</a>
                     <hr>
                     <p class="text-muted">¿Ya tienes una cuenta?</p>
-                    <a href="/users/signin" class="btn btn-outline-light">Ingresar</a>
+                    <a href="/signin" class="btn btn-outline-light">Ingresar</a>
                 </form>
             </div>
         </div>
     </div>
-    <%- include ('../partials/scripts.html')%>
+    <%- include ('partials/scripts.html')%>
 </body>
 </html>

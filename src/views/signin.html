@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%=title %> | Uluhlu</title>
-    <%- include ('../partials/head.html')%>
+    <%- include ('partials/head.html')%> 
 </head>
 <body>
     <div class="fondo_relative">
@@ -26,7 +26,8 @@
                         </div>
                         <a href="javascript:void(0)">Reset password</a>
                     </div>
-                    <button class="btn btn-primary btn-block">Ingresar</button>
+                    <!-- <button class="btn btn-primary btn-block">Ingresar</button> -->
+                    <a href="/app" class="btn btn-primary btn-block">Ingresar</a>
                     <hr>
                     <p class="text-muted">Inicie sesión con</p>
                     <ul class="list-inline">
@@ -58,11 +59,11 @@
                     </ul>
                     <hr>
                     <p class="text-muted">¿No tienes una cuenta?</p>
-                    <a href="/users/signup" class="btn btn-outline-light">Crear Cuenta</a>
+                    <a href="/signup" class="btn btn-outline-light">Crear Cuenta</a>
                 </form>
             </div>
         </div>
     </div>
-    <%- include ('../partials/scripts.html')%>
+    <%- include ('partials/scripts.html')%>
 </body>
 </html>

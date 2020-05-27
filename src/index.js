@@ -17,6 +17,7 @@ app.set('view engine', 'ejs');
 // Middlewares
 app.use(logger('dev'));
 app.use(express.urlencoded({extended: false}));
+app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(session({
     secret: 'mysecretapp',
@@ -29,7 +30,7 @@ app.use(session({
 // Rutas
 app.use(require('./routes/index'));
 app.use(require('./routes/tareas'));
-app.use(require('./routes/usuarios'));
+app.use(require('./routes/app'));
 
 // Archivos estaticos
 app.use(express.static(path.join(__dirname, 'public')));
